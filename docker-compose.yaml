@@ -1,5 +1,5 @@
 version: "3"
-services:
+services: 
   hub:
     image: seleniarm/hub:4.10
     ports:
@@ -31,7 +31,7 @@ services:
     depends_on:
       - chrome
     environment:
-      - BROWSER=${BROWSER}
+      - BROWSER=chrome
       - HUB_host=hub
       - THREAD_COUNT=3
       - TEST_SUITE=vendor-portal.xml
@@ -42,7 +42,7 @@ services:
     depends_on:
       - firefox
     environment:
-      - BROWSER=${BROWSER}
+      - BROWSER=firefox
       - HUB_host=hub
       - THREAD_COUNT=4
       - TEST_SUITE=flight-reservation.xml
