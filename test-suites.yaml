@@ -1,0 +1,20 @@
+version: "3"
+services:
+  vendor-portal:
+    image: pengzsdocker/selenium
+    environment:
+      - BROWSER=chrome
+      - HUB_host=hub
+      - THREAD_COUNT=3
+      - TEST_SUITE=vendor-portal.xml
+    volumes:
+      - ./output/vendor-portal:/home/selenium-docker/test-output
+  flight-reservation:
+    image: pengzsdocker/selenium
+    environment:
+      - BROWSER=firefox
+      - HUB_host=hub
+      - THREAD_COUNT=4
+      - TEST_SUITE=flight-reservation.xml
+    volumes:
+      - ./output/flight-reservation:/home/selenium-docker/test-output
